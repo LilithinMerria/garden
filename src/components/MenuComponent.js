@@ -4,7 +4,7 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 're
 
 function RenderMenuItem({flower, onClick}){
     return (
-        <Card onClick={() => onClick(flower.id)}>
+        <Card>
         <CardImg width="100%" src={flower.image} alt={flower.name} />
         <CardImgOverlay>
             <CardTitle>{flower.name}</CardTitle>

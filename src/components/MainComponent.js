@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Home from './HomeComponent';
 import Menu from './/MenuComponent';
 import FLOWERS from '../shared/flowers';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
 
@@ -11,24 +13,24 @@ class Main extends Component {
 
     this.state = {
       flowers: FLOWERS,
-      selectedFlower: null
     };
   }
 
-  onFlowerSelect(flowerId){
-    this.setState({
-        selectedFlower: flowerId
-    });
-  }
-
   render() {
+
+    const HomePage = () => {
+      return(
+        <Home />
+      );
+    }
     return (
         <div>
           <Header />
-          <Menu flowers={this.state.flowers} 
-            onClick={(flowerId) => this.onFlowerSelect(flowerId)}/>
-            {/*<FlowerDetail 
-            flower={this.state.flowers.filter((flower) => flower.id === this.state.selectedFlower) [0]} />*/}
+          <Switch>
+            <Route path="/home" component={HomePage} />
+            <Route exact path="/flower" component={() => <Menu flowers={this.state.flowers} />} />
+            <Redirect to="/home" />
+          </Switch>
           <Footer />
         </div>
     );
