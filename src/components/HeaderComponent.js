@@ -30,24 +30,24 @@ class Header extends Component {
                             alt="Ashlyn Garden" />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar>
-                                <NavItem>
-                                    <NavLink className="nav-link" to="/home">
+                            <Nav navbar className="list-unstyled">
+                                <NavItem> 
+                                    <NavLink className="nav-link" to="/home" style={{marginLeft:25}}>
                                         <span className="fa fa-home fa-lg"></span> Home
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/flower">
+                                    <NavLink className="nav-link" to="/flower" style={{marginLeft:10}}>
                                         <span className="fa fa-list fa-lg"></span> Flowers
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/aboutus">
+                                    <NavLink className="nav-link" to="/aboutus" style={{marginLeft:10}}>
                                         <span className="fa fa-info fa-lg"></span> About Us
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/contactus">
+                                    <NavLink className="nav-link" to="/contactus" style={{marginLeft:10}}>
                                         <span className="fa fa-address-card fa-lg"></span> Contact Us
                                     </NavLink>
                                 </NavItem>
